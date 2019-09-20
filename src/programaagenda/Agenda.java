@@ -20,10 +20,10 @@ public class Agenda {
         if (!agendaLlena()) {
             System.out.println("Agenda sin espacio");
         }
-        else if (buscarPorNombre("maria"))
-        {
-            System.out.println("El contacto con nombre  ya existe en la agenda"); 
-        }
+//        else if (buscarPorNombre("maria"))
+//        {
+//            System.out.println("El contacto con nombre  ya existe en la agenda"); 
+     //   }
         else
         {
         
