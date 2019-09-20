@@ -49,7 +49,14 @@ public class ProgramaAgenda {
              case "B":
              System.out.println("Ingrese el nombre a buscar");
              nombre = scanner.next();   
-             agenda.buscarPorNombre(nombre);
+             
+            if (agenda.buscarPorNombre(nombre)==true) {
+                System.out.println("Se encontró el contacto en la agenda");
+            }
+            else
+            {
+                System.out.println("No se encontró el contacto en la agenda");
+            }
                     
             break;
                 

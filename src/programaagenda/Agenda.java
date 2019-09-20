@@ -20,6 +20,10 @@ public class Agenda {
         if (!agendaLlena()) {
             System.out.println("Agenda sin espacio");
         }
+        else if (buscarPorNombre("maria"))
+        {
+            System.out.println("El contacto con nombre  ya existe en la agenda"); 
+        }
         else
         {
         
@@ -33,28 +37,20 @@ public class Agenda {
         }
     }
     
-        public void buscarPorNombre(String nombre) {
+        public Boolean buscarPorNombre(String nombre) {
 
-        String existe = "N";
+        boolean existe = false;
             System.out.println("Nombre: "+nombre);
         for (int i = 0; i < arrayContacto.length; i++) 
         {
             if (arrayContacto[i]!=null) {
                 if (arrayContacto[i].getNombre().equals(nombre.trim())) {
-                    existe = "S"; 
+                    existe = true; 
                 }  
             }
             
         }
-
-        if (existe.equals("S")) {
-            System.out.println("Se encontró el contacto en la agenda");
-        }
-        else
-        {
-            System.out.println("No se encontró el contacto");
-        }
-
+        return existe;
     }
         
         public void listarTodos()
@@ -77,7 +73,8 @@ public class Agenda {
             }
            return estadoAgenda;
         }
-               
+
+         
          public void espacioLibre(){
              
              int contador = 0;
