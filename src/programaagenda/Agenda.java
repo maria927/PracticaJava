@@ -11,7 +11,7 @@ public class Agenda {
     private Contacto[] arrayContacto;
     
     public Agenda() {
-        this.arrayContacto = new Contacto[3]; 
+        this.arrayContacto = new Contacto[15]; 
     }
     
     public void agregarContacto(Contacto c)
@@ -20,10 +20,10 @@ public class Agenda {
         if (!agendaLlena()) {
             System.out.println("Agenda sin espacio");
         }
-//        else if (buscarPorNombre("maria"))
-//        {
-//            System.out.println("El contacto con nombre  ya existe en la agenda"); 
-     //   }
+        else if (buscarPorNombre(c.getNombre()))
+        {
+            System.out.println("El contacto con nombre "+c.getNombre()+" ya existe en la agenda"); 
+        }
         else
         {
         
