@@ -14,6 +14,15 @@ public class Agenda {
         this.arrayContacto = new Contacto[15]; 
     }
     
+    /**
+
+     *  Este método Agrega un contacto a la agenda teniendo en cuenta, si no
+    puede agregar más a la agenda debe de informar al usuario “AGENDA SIN ESPACIO” y no
+    se pueden duplicar nombres en la agenda
+
+    * @param c Informacion del contacto
+
+     */
     public void agregarContacto(Contacto c)
     {
         
@@ -37,6 +46,14 @@ public class Agenda {
         }
     }
     
+        /**
+
+     *   Valida si existe o no el nombre de un contacto en la agenda
+
+     * @param nombre Parámetro con el nombre que se va a buscar en la agenda
+
+     */
+    
         public Boolean buscarPorNombre(String nombre) {
 
         boolean existe = false;
@@ -53,6 +70,11 @@ public class Agenda {
         return existe;
     }
         
+     /**
+
+     *    Lista todos los contactos de la agenda.
+
+     */
         public void listarTodos()
         {
            for (int i = 0; i < arrayContacto.length; i++) {
@@ -62,6 +84,11 @@ public class Agenda {
         
         }
         
+    /**
+
+     *    Me indica si la agenda ya esta llena o no
+
+     */
          public Boolean agendaLlena()
         {
            boolean estadoAgenda = false;
@@ -75,6 +102,11 @@ public class Agenda {
         }
 
          
+      /**
+
+     *     Me indica cuantos espacios libres hay en la agenda
+
+     */
          public void espacioLibre(){
              
              int contador = 0;

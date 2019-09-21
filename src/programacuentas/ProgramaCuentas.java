@@ -9,32 +9,57 @@ import java.util.Scanner;
 
 /**
  *
- * @author malzatee
+ * @author Maria
  */
 public class ProgramaCuentas {
 
     public static void main(String[] args) {
         System.out.println("Este es el programa de cuentas");
         Scanner scanner = new Scanner(System.in);
-        double saldo = 3500000;
         System.out.println("Ingrese el nombre del titular");
-        String nombre = scanner.next();
+        String nombreTitular = scanner.next();
+        
+        System.out.println("¿Desea ingresar saldo? S) SI  N) NO");
+        String opcionSaldo = scanner.next();
+        
+        if (opcionSaldo.equals("S")) 
+        {
+            System.out.println("Ingrese el saldo actual");
+            double saldo = scanner.nextDouble();
+            Cuenta cuenta1 = new Cuenta(nombreTitular, saldo);
+            menuOpcion(cuenta1);
+        }
+        else
+        {
+            Cuenta cuenta2 = new Cuenta(nombreTitular);
+            menuOpcion(cuenta2);
+        }     
+    }
+    
+       /**
+
+     * Método para elegir qué operación se va a realizar con la cuenta 
+
+     * @param cuenta El parámetro cuenta contiene la información de las propiedades ingresadas
+
+     */
+    public static void menuOpcion(Cuenta cuenta)
+    {
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Ingrese una operación: A) Ingresar B) Retirar S) Salir");
         String opcion = scanner.next();
-        Cuenta cuenta2 = new Cuenta(nombre, saldo);
-        
             while (!opcion.equals("S")) {
             
                 if (opcion.equals("A")) {
                     System.out.println("Ingrese la cantidad");
                     double cantidadIngresar = scanner.nextDouble();
                     
-                    cuenta2.ingresar(cantidadIngresar);
+                    cuenta.ingresar(cantidadIngresar);
                     
                 } else if (opcion.equals("B")) {
                     System.out.println("Ingrese la cantidad");
                     double cantidadRetirar = scanner.nextDouble();
-                    cuenta2.retirar(cantidadRetirar);
+                    cuenta.retirar(cantidadRetirar);
                 } else {
                     opcion = "S";
                 }
@@ -42,7 +67,5 @@ public class ProgramaCuentas {
             System.out.println("Ingrese una operación: A) Ingresar B) Retirar S) Salir");
             opcion= scanner.next();
         }
-         
     }
-    
 }
