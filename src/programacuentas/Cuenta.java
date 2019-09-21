@@ -9,7 +9,7 @@ package programacuentas;
 public class Cuenta {
    
    private String nombreTitular;
-   private double saldo;
+   private double saldo= 1000000;
    
    
    
@@ -27,6 +27,13 @@ public class Cuenta {
    }
 
 
+            /**
+
+     * Este método recibe una cantidad como parámetro el cual sumará a la cuenta actual. Si la cantidad en negativa no debe de sumar nada 
+
+     * @param cantidad Indica la cantidad que se ingresará a la cuenta
+
+     */
     public void ingresar(double cantidad) {
         
         System.out.println("La cantidad es: "+cantidad);
@@ -41,6 +48,13 @@ public class Cuenta {
         }
     }
     
+             /**
+
+     *  Este método recibe una cantidad como parámetro el cual restara a la cuenta actual. Si la cantidad a retirar es mayor a la cantidad actual no se puede restar y debe de sacar un mensaje de “SALDO INSUFICIENTE”
+
+     * @param cantidad Indica la cantidad que se retirará de la cuenta
+
+     */
     public void retirar(double cantidad)
     {
         if (cantidad > this.saldo) {
